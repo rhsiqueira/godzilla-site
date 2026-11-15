@@ -1,41 +1,44 @@
 import React from 'react';
-import { FaCheckCircle, FaShieldAlt } from 'react-icons/fa';
+import { FaShieldAlt } from 'react-icons/fa';
 import SectionTitle from '../components/SectionTitle';
-import { contact, team } from '../data/site';
+import WhatsAppButton from '../components/WhatsAppButton';
+import { contact, safetySteps } from '../data/site';
 
+// Seção de segurança: como o cliente confirma que a coleta é da Godzilla.
 const Team = () => (
-    <section className="section" aria-labelledby="equipe-titulo">
+    <section className="section" aria-labelledby="seguranca-titulo">
         <div className="container">
             <SectionTitle
-                id="equipe-titulo"
+                id="seguranca-titulo"
                 eyebrow="Segurança"
-                title="Equipe de coleta autorizada"
-                lead="Só estas pessoas coletam em nome da Godzilla. Desconsidere qualquer mensagem ou abordagem de quem não faz parte do nosso quadro oficial."
+                title="Coleta confirmada pelo nosso WhatsApp oficial"
+                lead="Antes de entregar o óleo, confirme com a gente o nome do coletor agendado para você. Assim você evita golpes de quem se passa pela Godzilla."
             />
 
-            <div className="team">
-                {team.map(({ name, image }) => (
-                    <figure key={name} className="team-card reveal">
-                        <div className="team-card__photo">
-                            <img src={image} alt={`Foto de ${name}`} width="200" height="267" loading="lazy" />
-                        </div>
-                        <figcaption>
-                            <span className="team-card__name">{name}</span>
-                            <span className="team-card__badge">
-                                <FaCheckCircle aria-hidden="true" />
-                                Coletor autorizado
-                            </span>
-                        </figcaption>
-                    </figure>
+            <ol className="safety">
+                {safetySteps.map(({ title, text }, index) => (
+                    <li key={title} className="safety__step reveal">
+                        <span className="safety__number" aria-hidden="true">
+                            {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <h3>{title}</h3>
+                        <p>{text}</p>
+                    </li>
                 ))}
-            </div>
+            </ol>
 
             <aside className="notice reveal">
                 <FaShieldAlt aria-hidden="true" className="notice__icon" />
-                <p>
-                    <strong>Evite golpes e fraudes.</strong> Nossos únicos canais oficiais são o WhatsApp{' '}
-                    {contact.whatsappLabel}, o telefone {contact.phoneLabel} e o e-mail {contact.email}.
-                </p>
+                <div className="notice__body">
+                    <p>
+                        <strong>Nossos únicos canais oficiais:</strong> WhatsApp {contact.whatsappLabel}, telefone{' '}
+                        {contact.phoneLabel} e e-mail {contact.email}. Desconsidere qualquer outro contato em nome da
+                        Godzilla.
+                    </p>
+                    <WhatsAppButton message="verify" variant="primary">
+                        Confirmar uma coleta
+                    </WhatsAppButton>
+                </div>
             </aside>
         </div>
     </section>

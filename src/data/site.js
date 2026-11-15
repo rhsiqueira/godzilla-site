@@ -13,6 +13,7 @@ export const messages = {
     credit: 'Quero saber mais sobre o crédito na Espaço do Gourmet.',
     pix: 'Olá! Vim pelo site e quero negociar o valor do óleo no Pix.\nLitros por mês (aprox.): ',
     portal: 'Olá! Quero acesso antecipado ao Portal do Cliente Godzilla.\nEmpresa: ',
+    verify: 'Olá! Quero confirmar se a coleta no meu comércio é da Godzilla.\nEmpresa: \nNome do coletor: ',
 };
 
 // Endereço público do site, sem barra no final (ex.: 'https://www.exemplo.com.br').
@@ -197,10 +198,20 @@ export const clients = [
     '/cliente-5.svg',
 ];
 
-export const team = [
-    { name: 'Luis Sávio Santos de Siqueira', image: '/funcionario-01.png' },
-    { name: 'Luis Sávio Santos de Siqueira Jr', image: '/funcionario-01.png' },
-    { name: 'Rodrigo Holanda de Siqueira', image: '/funcionario-01.png' },
+// Como o cliente confirma que a coleta é mesmo da Godzilla (seção de segurança).
+export const safetySteps = [
+    {
+        title: 'Você recebe a confirmação',
+        text: 'Antes de cada coleta, avisamos pelo WhatsApp oficial o dia e o nome do coletor.',
+    },
+    {
+        title: 'Confira na chegada',
+        text: 'Nossos coletores usam o uniforme verde da Godzilla e o veículo identificado com o logo.',
+    },
+    {
+        title: 'Na dúvida, não entregue',
+        text: 'Se alguém aparecer sem aviso, confirme com a gente pelo WhatsApp antes de liberar o óleo.',
+    },
 ];
 
 export const faq = [
@@ -235,5 +246,9 @@ export const faq = [
     {
         question: 'Recebo algum documento da coleta?',
         answer: 'Sim. Toda coleta gera um certificado de destinação, que comprova o destino ambientalmente correto do óleo.',
+    },
+    {
+        question: 'Como sei se o contato é mesmo da Godzilla?',
+        answer: 'Nossos únicos canais oficiais são o WhatsApp (11) 94644-7239, o telefone (11) 95758-2806 e o e-mail contato@godzillacoletadeoleo.com.br. Antes de cada coleta, avisamos o nome do coletor pelo WhatsApp oficial.',
     },
 ];
