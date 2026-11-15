@@ -896,56 +896,40 @@ li[data-done='true'] .tracking__dot {
     object-fit: contain;
 }
 
-/* ---------- Equipe e aviso antigolpe ---------- */
+/* ---------- Segurança e aviso antigolpe ---------- */
 
-.team {
+.safety {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 15rem));
-    justify-content: center;
-    gap: clamp(1rem, 3vw, 2rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: clamp(1rem, 2.5vw, 1.5rem);
     margin-block-start: clamp(2rem, 5vw, 3.5rem);
 }
 
-.team-card {
-    overflow: hidden;
+.safety__step {
+    display: grid;
+    align-content: start;
+    gap: 0.5rem;
+    padding: 1.5rem;
     border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
     background: var(--surface);
     box-shadow: var(--shadow-sm);
 }
 
-.team-card__photo {
-    padding-block-start: 1.25rem;
-    background: linear-gradient(var(--green-100), var(--green-200));
+.safety__number {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--gold-500);
 }
 
-.team-card__photo img {
-    inline-size: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    object-position: top;
+.safety__step h3 {
+    font-size: var(--text-xl);
 }
 
-.team-card figcaption {
-    display: grid;
-    gap: 0.4rem;
-    padding: 1rem 1.25rem 1.25rem;
-}
-
-.team-card__name {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    line-height: 1.3;
-    color: var(--green-800);
-}
-
-.team-card__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--green-600);
+.safety__step p {
+    color: var(--text-muted);
 }
 
 .notice {
@@ -959,6 +943,12 @@ li[data-done='true'] .tracking__dot {
     border-radius: var(--radius);
     background: #fbf7e3;
     overflow-wrap: anywhere;
+}
+
+.notice__body {
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
 }
 
 .notice__icon {
