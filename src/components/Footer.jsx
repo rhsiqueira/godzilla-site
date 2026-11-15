@@ -72,8 +72,8 @@ const Footer = () => (
             </p>
             <p>
                 Desenvolvimento:{' '}
-                <a href="https://github.com/Rodincrivel" target="_blank" rel="noopener noreferrer">
-                    Rodrigo Holanda
+                <a href="https://github.com/rhsiqueira" target="_blank" rel="noopener noreferrer">
+                    rhsiqueira
                 </a>
             </p>
         </div>
